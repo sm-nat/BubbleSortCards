@@ -59,7 +59,6 @@ window.onload = () => {
   const dibujarCarta = step => {
     const { number, pinta } = step;
     const card = document.createElement("div");
-    console.log(step);
     card.classList.add("card", pinta);
 
     const numero = document.createElement("div");
@@ -69,7 +68,7 @@ window.onload = () => {
     return card;
   };
 
-  // Función para el algoritmo de burbuja (bubble sort)
+  // algoritmo de burbuja
   const bubbleSort = () => {
     let n = cardData.length;
     let steps = [];
@@ -85,17 +84,13 @@ window.onload = () => {
         steps.push([...cardData]);
       }
     }
-
-    // Borra el contenido previo de sortcontainer
-    sortcontainer.innerHTML = "";
-
     cardData = steps[steps.length - 1];
 
     steps.forEach((step, index) => {
       const stepDiv = document.createElement("div");
       stepDiv.classList.add("step");
 
-      // Agrega el número de paso
+      // Agrega el número de pasos
       const stepNumber = document.createElement("span");
       stepNumber.classList.add("step-number");
       stepNumber.textContent = `Step ${index + 1}: `;

@@ -69,25 +69,27 @@ window.onload = () => {
     return card;
   };
 
-  // Algoritmo selection
-  const selectionSort = () => {
-    let min = 0;
+  // Función para el algoritmo de burbuja (bubble sort)
+  const bubbleSort = () => {
+    let n = cardData.length;
     let steps = [];
-    while (min < cardData.length - 1) {
-      for (let i = min + 1; i < cardData.length; i++) {
-        if (cardData[min].number > cardData[i].number) {
-          const aux = cardData[min];
-          cardData[min] = cardData[i];
-          cardData[i] = aux;
+
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - i - 1; j++) {
+        if (cardData[j].number > cardData[j + 1].number) {
+          // Intercambia las cartas
+          const temp = cardData[j];
+          cardData[j] = cardData[j + 1];
+          cardData[j + 1] = temp;
         }
         steps.push([...cardData]);
       }
-      min++;
     }
 
-    cardData = steps[steps.length - 1];
     // Borra el contenido previo de sortcontainer
     sortcontainer.innerHTML = "";
+
+    cardData = steps[steps.length - 1];
 
     steps.forEach((step, index) => {
       const stepDiv = document.createElement("div");
@@ -117,6 +119,6 @@ window.onload = () => {
   };
 
   drawButton.addEventListener("click", generarCarta);
-  sortButton.addEventListener("click", selectionSort);
+  sortButton.addEventListener("click", bubbleSort);
   restartButton.addEventListener("click", restart);
 };

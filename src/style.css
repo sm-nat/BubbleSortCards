@@ -3,31 +3,38 @@
 .enlace-natalia {
   color: black;
 }
+input {
+  border-radius: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: rgb(154, 163, 221);
+}
 section {
   padding-top: 15px;
 }
 body {
-  background-color: green;
+  background-color: rgba(26, 57, 161, 0.692);
+  font-family: cursive;
 }
 
 .numero {
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   justify-content: center;
   padding-top: 55px;
 }
 .card {
   text-align: center;
-  background: white;
+  background: rgb(181, 181, 242);
   margin: auto;
   margin-top: 10px;
   height: 200px;
   width: 150px;
   font-size: 8px;
   padding-top: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid rgb(64, 19, 126);
+  border-radius: 20px;
   position: relative;
 }
 #sortcontainer {
@@ -46,7 +53,7 @@ h3 {
 .card:after {
   content: "\2666";
   position: absolute;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .card:before {
@@ -63,25 +70,25 @@ h3 {
 .card.spade:before,
 .card.spade:after {
   content: "\2660"; /* espada */
-  color: black;
+  color: rgba(17, 145, 75, 0.459);
 }
 
 .card.heart:before,
 .card.heart:after {
   content: "\2665"; /* corazon */
-  color: red;
+  color: rgba(226, 228, 108, 0.817);
 }
 
 .card.club:before,
 .card.club:after {
   content: "\2663"; /* trebol */
-  color: black;
+  color: rgba(17, 145, 75, 0.459);
 }
 
 .card.diamond:before,
 .card.diamond:after {
   content: "\2666"; /* diamantes */
-  color: red;
+  color: rgba(226, 228, 108, 0.817);
 }
 #cardContainer {
   display: flex;
